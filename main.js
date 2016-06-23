@@ -1,7 +1,13 @@
+// TODO: refactor into Angular
+
+
+// TODO: refactor to set size of matrix based on user input
+const MATRIX_SIZE = 20;
+
+//randomly assign initial state of each cell to 1(alive) or 0(dead)
 const randomizer = () => Math.floor(Math.random()*2)
 
-const MATRIX_SIZE = 15;
-
+//create our initial matrix
 const createMatrix = function(num){
     let retArr = [];
     for(var i = 0; i < num; i++){
@@ -14,14 +20,21 @@ const createMatrix = function(num){
     return retArr;
 }
 
-var prevState = [];
-var nextState = createMatrix(MATRIX_SIZE);
+//define our previous matrix state to iterate through for next state
+let prevState = [];
+
+//begin by creating our next state to load
+let nextState = createMatrix(MATRIX_SIZE);
+
+
+//set up our points for reference when getting neighbors based on location of cell
+//currently selected
 
 const getPoints = function(row, column){
-  var startRow = 0;
-  var startColumn = 0;
-  var endRow = 0;
-  var endColumn = 0;
+  let startRow = 0;
+  let startColumn = 0;
+  let endRow = 0;
+  let endColumn = 0;
 
   if(row === 0){
     startRow = 0;
@@ -51,7 +64,8 @@ const getPoints = function(row, column){
  getNeighbors(row, column, startRow, startColumn, endRow, endColumn)
 }
 
-
+//get neighbors of current cell,
+// TODO: refactor to be a pure function, returning a new array instead of replacing values one at a time
 const getNeighbors = function(row, column, startRow, startColumn, endRow, endColumn){
   let neighbors = 0;
   for(var i = startRow; i <= endRow; i++){
@@ -85,6 +99,7 @@ const getNeighbors = function(row, column, startRow, startColumn, endRow, endCol
   }
 }
 
+//set the HTML to render our new matrix on the page
 const printStates = function(){
   var html = ""
   for(var el in prevState){
@@ -104,6 +119,8 @@ const printStates = function(){
 }
 
 
+//assign previousState to store the current state.
+//clear nextState to adopt new alive or dead cells
 const loadStates = function(){
   printStates();
   prevState = nextState;
@@ -120,9 +137,11 @@ const loadStates = function(){
   printStates();
 }
 
+//load initial State on the page, begin setInterval
 const begin = function(){
   loadStates();
   setInterval(loadStates, 2000);
 }
 
+//begin the Game of Life
 begin();
