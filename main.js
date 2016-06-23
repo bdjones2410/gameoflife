@@ -5,11 +5,11 @@ const MATRIX_SIZE = 15;
 const createMatrix = function(num){
     let retArr = [];
     for(var i = 0; i < num; i++){
-      let myrow = []
+      let row = []
       for(var j = 0; j < num; j++){
-        myrow.push(randomizer());
+        row.push(randomizer());
       }
-      retArr.push(myrow);
+      retArr.push(row);
     }
     return retArr;
 }
@@ -86,17 +86,26 @@ const getNeighbors = function(row, column, startRow, startColumn, endRow, endCol
 }
 
 const printStates = function(){
-  for(var k in prevState){
-    console.log(prevState[k]);
+  var html = ""
+  for(var el in prevState){
+    html+= "<div>"
+    for(var item in prevState[el]){
+      if(prevState[el][item] === 1){
+        html +=  `<div class="alive"></div>`
+      }
+      else{
+        html+=`<div class="dead"></div>`
+      }
+    }
+    html+="</div>"
   }
-  console.log("------------------");
-  for(var l in nextState){
-    console.log(nextState[l])
-  }
+
+  document.getElementById('print-states').innerHTML = html;
 }
 
 
-const begin = function(){
+const loadStates = function(){
+  printStates();
   prevState = nextState;
   nextState = [];
   for(var i in prevState){
@@ -110,3 +119,10 @@ const begin = function(){
   }
   printStates();
 }
+
+const begin = function(){
+  loadStates();
+  setInterval(loadStates, 2000);
+}
+
+begin();

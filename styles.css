@@ -1,0 +1,21 @@
+div {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+}
+.alive {
+  background-color: black;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 1px solid grey;
+}
+
+.dead {
+  background-color: white;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 1px solid grey;
+}
