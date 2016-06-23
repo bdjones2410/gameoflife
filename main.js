@@ -88,10 +88,10 @@ const getNeighbors = function(row, column, startRow, startColumn, endRow,
 // TODO: refactor to use tables and cells instead of divs?
 const printStates = function() {
         var html = ""
-        for (var el in prevState) {
+        for (var el in nextState) {
             html += "<div>"
-            for (var item in prevState[el]) {
-                if (prevState[el][item] === 1) {
+            for (var item in nextState[el]) {
+                if (nextState[el][item] === 1) {
                     html += `<div class="alive"></div>`
                 } else {
                     html += `<div class="dead"></div>`
@@ -106,17 +106,14 @@ const printStates = function() {
 //clear nextState to adopt new alive or dead cells
 const loadStates = function() {
         printStates();
-        prevState = nextState;
-        nextState = [];
-        for (var i in prevState) {
-            nextState.push([]);
+        for(var i in nextState){
+          prevState[i] = [...nextState[i]];
         }
         for (var i = 0; i < prevState.length; i++) {
             for (var j = 0; j < prevState[i].length; j++) {
                 getPoints(i, j);
             }
         }
-        printStates();
     }
 
 //load initial State on the page, begin setInterval
@@ -124,6 +121,6 @@ const begin = function() {
         loadStates();
         setInterval(loadStates, 2000);
     }
-     
+
 //begin the Game of Life
 begin();
