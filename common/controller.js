@@ -12,8 +12,10 @@
             //important variables
             vm.LIFE_ACTIVE = false;
             vm.MATRIX_SIZE = 20;
+            vm.INTERVAL = 2000;
 
             //defining our states
+            vm.ticks = 1;
             vm.currentState = [];
             vm.nextState = [];
 
@@ -30,11 +32,12 @@
 
             //initialize our states, start our interval for updates, set LIFE_ACTIVE to true
             vm.beginLife = function(num) {
+                    vm.ticks = 1;
                     vm.LIFE_ACTIVE = true;
                     var retArr = mainService.createMatrix(num);
                     vm.currentState = [...retArr];
                     vm.nextState = [...retArr];
-                    vm.clearInt = setInterval(vm.setNextState, 2000)
+                    vm.clearInt = setInterval(vm.setNextState, vm.INTERVAL);
                 }
 
             //set our currentState to current version of our nextState, cycle through our currentState to get our current cell location.
@@ -49,7 +52,7 @@
                     }
 
                     //allows angular's digest cycle to watch for this change so it will update on the dom.
-                    $scope.$apply(vm.currentState = [...vm.nextState]);
+                    $scope.$apply(vm.currentState = [...vm.nextState], vm.ticks++);
                 }
 
             //takes our current cell position, and sets our starting and end points for checking neighbor cells based on posistion of current cell.
