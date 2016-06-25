@@ -22,7 +22,17 @@ angular
            return retArr;
        };
 
+       //return dead or alive for newState array cell based on currentState's status and neighbors
+       const lifeCheck = function(status, count){
+         if (status === "dead") {
+          return count == 3 ? "alive" : "dead"
+         } else {
+          return count < 2 ? "dead" :  count > 3 ? "dead" : "alive"
+         }
+       }
+
       return {
-        createMatrix : createMatrix
+        createMatrix : createMatrix,
+        lifeCheck : lifeCheck
       }
     }])
