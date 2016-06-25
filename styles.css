@@ -1,3 +1,7 @@
+/*********************************
+        OVERALL
+**********************************/
+
 body {
   font-family: 'Poiret One', cursive;
   background-color:#2c3e50;
@@ -9,30 +13,6 @@ header{
   background-color: #34495e;
   padding:10px;
   margin-bottom: 10px;
-}
-
-h1{
-  text-align: center;
-  font-size: 5em;
-  color: #ecf0f1;
-  margin: 0;
-}
-
-div {
-  box-sizing: border-box;
-  height: 20px;
-}
-
-.set-up {
-  text-align: center;
-}
-
-input {
-  display: inline;
-  padding: 5px;
-  border-radius: 5px;
-  border-width: 1px;
-  font-size: 16px;
 }
 
 .custom-button {
@@ -47,10 +27,46 @@ input {
   border-style: solid;
 }
 
+/*********************************
+        HEADER
+**********************************/
+
+h1{
+  text-align: center;
+  font-size: 5em;
+  color: #ecf0f1;
+  margin: 0;
+}
+
+/*********************************
+         INPUT ON PAGE LOAD
+**********************************/
+
+.set-up {
+  text-align: center;
+}
+
+input {
+  display: inline;
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 16px;
+}
+
+/*********************************
+           GAME
+**********************************/
+
 .reset-btn {
   background-color: #c0392b;
   border-color:#d35400;
   margin-bottom: 10px;
+}
+
+div {
+  box-sizing: border-box;
+  height: 20px;
 }
 
 #print-states {
@@ -67,13 +83,13 @@ input {
   display: inline-block;
   height: 20px;
   width: 20px;
-  border: 1px solid grey;
+  border: 1px solid black;
 }
 
 .alive {
-  background-color: black;
+  background-color: #2ecc71;
 }
 
 .dead {
-  background-color: white;
+  background-color: #2980b9;
 }
