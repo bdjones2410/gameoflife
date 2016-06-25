@@ -4,6 +4,8 @@
     // TODO: test cases
     // TODO: secure input field to only accept valid numbers within a range.
     // TODO: look into dynamically setting css width and height of cells based on grid & browser size
+    // TODO: reformat logic functions to be in mainservice, controller sends and receives states, service checks updates and creates states.
+    
     angular.module('app').controller('mainController', ['$scope',
         'mainService',
         function($scope, mainService) {
