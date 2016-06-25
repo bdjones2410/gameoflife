@@ -4,7 +4,7 @@
 ```
 gh-pages live version: https://bdjones2410.github.io/gameoflife/
 ```
-
+https://bdjones2410.github.io/gameoflife/
 
 Challenge 1
 
