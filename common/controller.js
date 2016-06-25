@@ -3,6 +3,7 @@
     // TODO: refactor to be a pure function, returning a new array instead of replacing values one at a time
     // TODO: test cases
     // TODO: secure input field to only accept valid numbers within a range.
+    // TODO: look into dynamically setting css width and height of cells based on grid & browser size
     angular.module('app').controller('mainController', ['$scope',
         'mainService',
         function($scope, mainService) {
