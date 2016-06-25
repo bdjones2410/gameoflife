@@ -1,0 +1,22 @@
+{
+  "name": "jrstest",
+  "version": "1.0.0",
+  "description": "Heavily in progress code challenge",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdjones2410/gameoflife.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdjones2410/gameoflife/issues"
+  },
+  "homepage": "https://github.com/bdjones2410/gameoflife#readme",
+  "dependencies": {
+    "angular": "^1.5.7",
+  }
+}

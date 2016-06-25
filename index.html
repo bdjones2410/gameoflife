@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>matrix</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <section id="print-states">
+  <body ng-controller="mainController as vm">
+    <header>
+      <h1>GAME OF LIFE</h1>
+    </header>
+
+    <div class="set-up" ng-hide="vm.checkLife()">
+      <input type="text" ng-model="vm.MATRIX_SIZE">
+      <button class="custom-button" ng-click="vm.beginLife(vm.MATRIX_SIZE)">Start</button>
+    </div>
+
+    <section ng-show="vm.checkLife()" id="print-states">
+      <button class="custom-button reset-btn"ng-click="vm.reset()">RESET</button>
+      <div ng-repeat="row in vm.currentState">
+          <span ng-repeat="cell in row track by $index" class="{{cell}}"></span>
+      </div>
     </section>
 
-    <script src="main.js" charset="utf-8"></script>
+
+    <!--libs-->
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="" charset="utf-8"></script>
+
+    <!--scripts-->
+    <script src="common/module.js" charset="utf-8"></script>
+    <script src="common/controller.js" charset="utf-8"></script>
+    <script src="common/service.js" charset="utf-8"></script>
+
+
+
+    <!-- <script src="main.js" charset="utf-8"></script> -->
   </body>
 </html>

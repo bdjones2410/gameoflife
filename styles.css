@@ -1,21 +1,72 @@
+body {
+  background-color:#2c3e50;
+  margin:0;
+}
+
+header{
+  overflow: auto;
+  background-color: #34495e;
+  padding:10px;
+  margin-bottom: 10px;
+}
+
+h1{
+  text-align: center;
+  font-size: 5em;
+  color: #ecf0f1;
+  margin: 0;
+}
+
 div {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   height: 20px;
 }
-.alive {
-  background-color: black;
+
+.set-up {
+  text-align: center;
+}
+
+input {
+  display: inline;
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  font-size: 16px;
+}
+
+.custom-button {
+  font-size: 16px;
+  display: inline;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: #27ae60;
+  border-color: #16a085;
+  color: #ecf0f1;
+  border-style: solid;
+}
+
+.reset-btn {
+  background-color: #c0392b;
+  border-color:#d35400;
+  margin-bottom: 30px;
+}
+
+#print-states {
+  text-align: center;
+}
+
+span {
   display: inline-block;
   height: 20px;
   width: 20px;
   border: 1px solid grey;
 }
 
+.alive {
+  background-color: black;
+}
+
 .dead {
   background-color: white;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  border: 1px solid grey;
 }
