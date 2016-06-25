@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body ng-controller="mainController as vm">
+    
     <header>
       <h1>GAME OF LIFE</h1>
     </header>
 
+    <!--shown initially, allows starting the game of life with input value for grid size-->
     <div class="set-up" ng-hide="vm.checkLife()">
       <input type="text" ng-model="vm.MATRIX_SIZE">
       <button class="custom-button" ng-click="vm.beginLife(vm.MATRIX_SIZE)">Start</button>
     </div>
 
+  <!-- hidden initially, displays game of life as it plays out, has a reset button to clear out the grid and start over -->
     <section ng-show="vm.checkLife()" id="print-states">
       <button class="custom-button reset-btn"ng-click="vm.reset()">RESET</button>
       <div ng-repeat="row in vm.currentState">
@@ -31,9 +34,5 @@
     <script src="common/module.js" charset="utf-8"></script>
     <script src="common/controller.js" charset="utf-8"></script>
     <script src="common/service.js" charset="utf-8"></script>
-
-
-
-    <!-- <script src="main.js" charset="utf-8"></script> -->
   </body>
 </html>
