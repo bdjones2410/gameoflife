@@ -1,5 +1,11 @@
 # gameoflife
 
+
+```
+gh-pages live version: https://bdjones2410.github.io/gameoflife/
+```
+
+
 Challenge 1
 
 Create a game of life simulation in AngularJS
