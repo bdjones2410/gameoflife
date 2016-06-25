@@ -1,7 +1,5 @@
 # gameoflife
 
-Heavily in progress code challenge
-
 Challenge 1
 
 Create a game of life simulation in AngularJS
