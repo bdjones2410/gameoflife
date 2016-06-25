@@ -25,7 +25,7 @@
 
             //clear out current running game of life, reset LIFE_ACTIVE to false
             vm.reset = function() {
-                    window.clearInterval(vm.autimateLife)
+                    window.clearInterval(vm.automateLife)
                     vm.LIFE_ACTIVE = false;
                 };
 
@@ -36,7 +36,7 @@
                     var retArr = mainService.createMatrix(num);
                     vm.currentState = [...retArr];
                     vm.nextState = [...retArr];
-                    vm.autimateLife = setInterval(vm.setNextState, vm.INTERVAL);
+                    vm.automateLife = setInterval(vm.setNextState, vm.INTERVAL);
                 };
 
             //set our currentState to current version of our nextState, cycle through our currentState to get our current cell location.
