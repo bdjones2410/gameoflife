@@ -17,13 +17,13 @@
     </header>
 
     <!--shown initially, allows starting the game of life with input value for grid size-->
-    <div class="set-up" ng-hide="vm.checkLife()">
+    <div ng-cloak class="set-up" ng-hide="vm.checkLife()">
       <input type="text" ng-model="vm.MATRIX_SIZE">
       <button class="custom-button" ng-click="vm.beginLife(vm.MATRIX_SIZE)">START</button>
     </div>
 
   <!-- hidden initially, displays game of life as it plays out, has a reset button to clear out the grid and start over -->
-    <section ng-show="vm.checkLife()" id="print-states">
+    <section ng-cloak ng-show="vm.checkLife()" id="print-states">
       <button class="custom-button reset-btn"ng-click="vm.reset()">RESET</button>
       <span id="gen-count">Generations: {{vm.ticks}}</span>
       <div ng-repeat="row in vm.currentState">
