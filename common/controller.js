@@ -6,7 +6,7 @@
     angular.module('app')
       .controller('mainController', ['$scope', 'mainService',
         function($scope, mainService) {
-            var vm = this;
+            const vm = this;
 
             //important variables
             vm.LIFE_ACTIVE = false;
@@ -22,7 +22,7 @@
                     return vm.LIFE_ACTIVE;
                 };
 
-            //clear out current running game of life, reset LIFE_ACTIVE to false
+            //clear out current Interval for Game of Life, reset LIFE_ACTIVE to false
             vm.reset = function() {
                     window.clearInterval(vm.automateLife)
                     vm.LIFE_ACTIVE = false;
