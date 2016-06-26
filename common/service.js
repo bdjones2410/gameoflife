@@ -12,10 +12,10 @@
 
             //creates our game initial Game of Life array/state
             const createMatrix = function(num) {
-                var retArr = [];
-                for (var i = 0; i < num; i++) {
+                let retArr = [];
+                for (let i = 0; i < num; i++) {
                     let row = []
-                    for (var j = 0; j < num; j++) {
+                    for (let j = 0; j < num; j++) {
                         let rando = randomizer();
                         rando === 1 ? row.push("alive") : row.push(
                             "dead")
@@ -34,11 +34,11 @@
             //takes current array, makes a copy and then updates the copy one cell at a time based on currentState
             const getArray = function(curState) {
                     let nextArr = [];
-                    for (var row in curState) {
+                    for (let row in curState) {
                         nextArr[row] = [...curState[row]];
                     }
-                    for (var i = 0; i < curState.length; i++) {
-                        for (var j = 0; j < curState[i].length; j++) {
+                    for (let i = 0; i < curState.length; i++) {
+                        for (let j = 0; j < curState[i].length; j++) {
                             let cell = getCell(i, j, curState);
                             nextArr[i][j] = cell;
                         }
@@ -55,8 +55,8 @@
                 let endRow = row === curState[row].length - 1 ? row : row + 1
                 let endColumn = column === curState[column].length - 1 ? column : column + 1;
                 let neighbors = 0;
-                for (var i = startRow; i <= endRow; i++) {
-                    for (var j = startColumn; j <= endColumn; j++) {
+                for (let i = startRow; i <= endRow; i++) {
+                    for (let j = startColumn; j <= endColumn; j++) {
                         if (i === row && j === column) {} else {
                             if (curState[i][j] === "alive") {
                                 neighbors++;
