@@ -52,18 +52,16 @@
             const getCell = function(row, column, curState) {
                 let startRow = row === 0 ? 0 : row - 1;
                 let startColumn = column === 0 ? 0 : column - 1;
-                let endRow = row === curState[row].length - 1 ? row : row + 1
+                let endRow = row === curState[row].length - 1 ? row : row + 1;
                 let endColumn = column === curState[column].length - 1 ? column : column + 1;
                 let neighbors = 0;
                 for (let i = startRow; i <= endRow; i++) {
                     for (let j = startColumn; j <= endColumn; j++) {
-                        if (i === row && j === column) {} else {
-                            if (curState[i][j] === "alive") {
-                                neighbors++;
-                            }
+                        if (i !== row || j !== column) {
+                          curState[i][j] === "alive" ? neighbors++ : null;
                         }
+                      }
                     }
-                }
                 let cell = lifeCheck(curState[row][column], neighbors);
                 return cell;
             };
@@ -80,7 +78,6 @@
 
             return {
                 createMatrix: createMatrix,
-                lifeCheck: lifeCheck,
                 getNextState: getNextState
             }
         }

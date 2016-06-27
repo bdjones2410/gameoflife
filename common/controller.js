@@ -9,11 +9,11 @@
             const vm = this;
 
             //important variables
-            vm.LIFE_ACTIVE = false;
-            vm.MATRIX_SIZE = 20;
-            vm.INTERVAL = 2000;
+            let LIFE_ACTIVE = false;
+            const INTERVAL = 2000;
 
             //defining our states
+            vm.MATRIX_SIZE = 20;
             vm.ticks = 1;
             vm.currentState = [];
 
@@ -33,11 +33,11 @@
                     vm.ticks = 1;
                     vm.LIFE_ACTIVE = true;
                     vm.currentState = [...mainService.createMatrix(num)];
-                    vm.automateLife = setInterval(vm.getNextState, vm.INTERVAL);
+                    vm.automateLife = setInterval(getNextState.bind(vm), INTERVAL);
                 };
 
             //set our currentState to current version of our nextState, cycle through our currentState to get our current cell location.
-            vm.getNextState = function() {
+            const getNextState = function() {
                  let newStateArr = mainService.getNextState(vm.currentState);
                   //allows angular to see this change and update on the dom.
                   $scope.$apply(vm.currentState = [...newStateArr], vm.ticks++);
