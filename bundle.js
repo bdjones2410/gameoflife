@@ -28,21 +28,21 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
         //for ng-show of grid.
         vm.checkLife = function () {
-            return vm.LIFE_ACTIVE;
+            return LIFE_ACTIVE;
         };
 
         //clear out current Interval for Game of Life, reset LIFE_ACTIVE to false
         vm.reset = function () {
             window.clearInterval(vm.automateLife);
-            vm.LIFE_ACTIVE = false;
+            LIFE_ACTIVE = false;
         };
 
         //initialize our states, start our interval for updates, set LIFE_ACTIVE to true
         vm.beginLife = function (num) {
             vm.ticks = 1;
-            vm.LIFE_ACTIVE = true;
+            LIFE_ACTIVE = true;
             vm.currentState = [].concat(_toConsumableArray(mainService.createMatrix(num)));
-            vm.automateLife = setInterval(getNextState.bind(vm), INTERVAL);
+            vm.automateLife = setInterval(getNextState, INTERVAL);
         };
 
         //set our currentState to current version of our nextState, cycle through our currentState to get our current cell location.
