@@ -33,7 +33,7 @@
                     vm.ticks = 1;
                     vm.LIFE_ACTIVE = true;
                     vm.currentState = [...mainService.createMatrix(num)];
-                    vm.automateLife = setInterval(getNextState.bind(vm), INTERVAL);
+                    vm.automateLife = setInterval(getNextState, INTERVAL);
                 };
 
             //set our currentState to current version of our nextState, cycle through our currentState to get our current cell location.
