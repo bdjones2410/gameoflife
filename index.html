@@ -24,7 +24,7 @@
 
   <!-- hidden initially, displays game of life as it plays out, has a reset button to clear out the grid and start over -->
     <section ng-cloak ng-show="vm.checkLife()" id="print-states">
-      <button class="custom-button reset-btn"ng-click="vm.reset()">RESET</button>
+      <button class="custom-button reset-btn" ng-click="vm.reset()">RESET</button>
       <span id="gen-count">Generations: {{vm.ticks}}</span>
       <div ng-repeat="row in vm.currentState">
           <span ng-repeat="cell in row track by $index" class="cell {{cell}}"></span>
